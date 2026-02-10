@@ -1,10 +1,26 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-
-const repoName = process.env.GITHUB_REPOSITORY?.split('/')[1]
-const isGithubActions = process.env.GITHUB_ACTIONS === 'true'
+import { resolve } from 'node:path'
 
 export default defineConfig({
-  base: isGithubActions && repoName ? `/${repoName}/` : './',
-  plugins: [react()]
+  base: './',
+  plugins: [react()],
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true,
+    assetsDir: 'assets',
+    rollupOptions: {
+      input: resolve(__dirname, 'src/main.jsx'),
+      output: {
+        entryFileNames: 'assets/app.js',
+        chunkFileNames: 'assets/[name].js',
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name && assetInfo.name.endsWith('.css')) {
+            return 'assets/app.css'
+          }
+          return 'assets/[name][extname]'
+        }
+      }
+    }
+  }
 })
