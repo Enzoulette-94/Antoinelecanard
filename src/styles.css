@@ -1,0 +1,200 @@
+:root {
+  font-family: 'Trebuchet MS', 'Verdana', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #ffb6d9;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.6) 0, transparent 26%),
+    radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.35) 0, transparent 24%),
+    #ff8fc1;
+}
+
+.heart-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  color: rgba(255, 20, 120, 0.8);
+  animation-name: floatHeart;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes floatHeart {
+  0% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-12px) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.6;
+  }
+}
+
+.confetti-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 12;
+}
+
+.confetti {
+  position: absolute;
+  top: -20px;
+  border-radius: 2px;
+  opacity: 0;
+  animation-name: confettiDrop;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes confettiDrop {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(105vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.card {
+  position: relative;
+  z-index: 20;
+  width: min(680px, 92vw);
+  min-height: 320px;
+  border-radius: 22px;
+  padding: 20px 18px 18px;
+  background: rgba(255, 241, 248, 0.95);
+  border: 3px solid #ff4fa0;
+  box-shadow: 0 10px 30px rgba(180, 25, 110, 0.25);
+  text-align: center;
+}
+
+h1 {
+  margin: 0 auto 16px;
+  max-width: 620px;
+  font-size: clamp(1.2rem, 3.5vw, 2rem);
+  line-height: 1.35;
+  color: #b20064;
+}
+
+.buttons {
+  position: relative;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border-radius: 16px;
+  background: rgba(255, 189, 221, 0.45);
+  border: 2px dashed #ff4fa0;
+  overflow: hidden;
+}
+
+.btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 22px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.btn-no {
+  position: relative;
+  background: #3f3f46;
+  color: #fff;
+}
+
+.btn-no-escaping {
+  position: fixed;
+  z-index: 30;
+}
+
+.btn-yes {
+  position: relative;
+  min-width: 130px;
+  background: #ff2e93;
+  color: #fff;
+}
+
+.btn-yes:hover {
+  filter: brightness(1.06);
+  transform: scale(1.03);
+}
+
+.song-link {
+  display: inline-block;
+  margin-top: 24px;
+  font-weight: 700;
+  color: #a0005a;
+  text-decoration: underline;
+}
+
+.song-link:hover {
+  color: #730040;
+}
+
+.yes-card {
+  display: grid;
+  gap: 16px;
+  align-content: center;
+  justify-items: center;
+  width: min(980px, 95vw);
+  min-height: 560px;
+  padding: 28px 24px;
+}
+
+.yes-image {
+  width: min(860px, 90vw);
+  height: min(460px, 65vh);
+  object-fit: contain;
+  border-radius: 14px;
+  border: 3px solid #ff4fa0;
+  background:
+    linear-gradient(135deg, #ffd8ec 0%, #ffc0de 100%);
+}
+
+.yes-card p {
+  margin: 0;
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  font-weight: 800;
+  color: #b20064;
+}
+
+.yes-card small {
+  color: #7b0043;
+}
