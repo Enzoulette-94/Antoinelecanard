@@ -7,10 +7,24 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module">
+    <script>
       const isGithubPages = window.location.hostname.endsWith('github.io')
-      const entry = isGithubPages ? './dist/assets/app.js' : '/src/main.jsx'
-      import(entry)
+      if (isGithubPages) {
+        const css = document.createElement('link')
+        css.rel = 'stylesheet'
+        css.href = './dist/assets/app.css'
+        document.head.appendChild(css)
+
+        const script = document.createElement('script')
+        script.type = 'module'
+        script.src = './dist/assets/app.js'
+        document.body.appendChild(script)
+      } else {
+        const script = document.createElement('script')
+        script.type = 'module'
+        script.src = '/src/main.jsx'
+        document.body.appendChild(script)
+      }
     </script>
   </body>
 </html>
