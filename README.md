@@ -11,12 +11,23 @@ npm run dev
 npm run build
 ```
 
-## Deploy GitHub Pages (recommandé: GitHub Actions)
-1. Dans GitHub: `Settings > Pages > Source = GitHub Actions`.
-2. Push sur `main`.
-3. Le workflow `.github/workflows/deploy.yml` build et publie `dist/` automatiquement.
+## Deploy GitHub Pages depuis la branch main
+1. Build Pages dans `docs/`:
+```bash
+npm run build:pages
+```
+2. Commit et push:
+```bash
+git add .
+git commit -m "build pages docs"
+git push origin main
+```
+3. Dans GitHub: `Settings > Pages`
+- `Source`: `Deploy from a branch`
+- `Branch`: `main`
+- `Folder`: `/docs`
 
-## Alternative deploy (gh-pages branch)
+## Option alternative (branch gh-pages)
 ```bash
 npm run deploy
 ```
