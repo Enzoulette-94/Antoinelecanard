@@ -67,7 +67,7 @@ export default function Yes() {
         <p>rdv samedi beauté divine</p>
         <img
           className="yes-image"
-          src={`${import.meta.env.BASE_URL}public/FullSizeRender-preview.jpg`}
+          src={`${import.meta.env.BASE_URL}FullSizeRender-preview.jpg`}
           alt="Photo Valentine"
         />
         <p>tu viens d'acceder au bohneur</p>

@@ -11,18 +11,12 @@ npm run dev
 npm run build
 ```
 
-## Deploy GitHub Pages (main + /root)
-1. Dans GitHub: `Settings > Pages > Build and deployment > Source: Deploy from a branch`.
-2. Choisir `Branch: main` et `Folder: / (root)`.
-3. Générer le build puis commit/push:
+## Deploy GitHub Pages (recommandé: GitHub Actions)
+1. Dans GitHub: `Settings > Pages > Source = GitHub Actions`.
+2. Push sur `main`.
+3. Le workflow `.github/workflows/deploy.yml` build et publie `dist/` automatiquement.
 
+## Alternative deploy (gh-pages branch)
 ```bash
-npm run build
-git add .
-git commit -m "build: update dist for github pages"
-git push
+npm run deploy
 ```
-
-Important:
-- Le dossier `dist/` doit être versionné (commité) pour ce mode `main + /root`.
-- `index.html` charge `dist/assets/app.js` sur GitHub Pages et `/src/main.jsx` en local dev.

@@ -7,24 +7,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <script>
-      const isGithubPages = window.location.hostname.endsWith('github.io')
-      if (isGithubPages) {
-        const css = document.createElement('link')
-        css.rel = 'stylesheet'
-        css.href = './dist/assets/app.css'
-        document.head.appendChild(css)
-
-        const script = document.createElement('script')
-        script.type = 'module'
-        script.src = './dist/assets/app.js'
-        document.body.appendChild(script)
-      } else {
-        const script = document.createElement('script')
-        script.type = 'module'
-        script.src = '/src/main.jsx'
-        document.body.appendChild(script)
-      }
-    </script>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
