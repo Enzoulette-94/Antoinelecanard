@@ -70,7 +70,7 @@ export default function Yes() {
           src={`${import.meta.env.BASE_URL}FullSizeRender-preview.jpg`}
           alt="Photo Valentine"
         />
-        <p>tu viens d'acceder au bohneur</p>
+        <p> tu viens d'accéder au bonheur</p>
       </section>
     </main>
   )
