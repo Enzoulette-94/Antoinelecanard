@@ -198,3 +198,39 @@ h1 {
 .yes-card small {
   color: #7b0043;
 }
+
+@media (max-width: 768px) {
+  .page {
+    padding: 14px;
+  }
+
+  .yes-card {
+    width: 94vw;
+    min-height: auto;
+    padding: 18px 14px;
+    gap: 12px;
+  }
+
+  .yes-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 58vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .yes-card {
+    border-radius: 16px;
+    padding: 14px 10px;
+  }
+
+  .yes-card p {
+    font-size: clamp(1rem, 5vw, 1.35rem);
+  }
+
+  .yes-image {
+    max-height: 52vh;
+    border-width: 2px;
+  }
+}
