@@ -27,6 +27,9 @@ git push origin main
 - `Branch`: `main`
 - `Folder`: `/docs`
 
+URL attendue:
+- `https://enzoulette-94.github.io/Antoinelecanard/`
+
 ## Option alternative (branch gh-pages)
 ```bash
 npm run deploy
