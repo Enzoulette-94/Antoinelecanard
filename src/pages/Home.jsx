@@ -85,7 +85,7 @@ export default function Home() {
 
       <section className="card">
         <h1>
-          **Veux-tu être ma Valentine pour le 14 février et passer le moment le plus romantique de notre existence ?**
+          Veux-tu être ma Valentine pour le 14 février et passer le moment le plus romantique de notre existence ?
         </h1>
 
         <div className="buttons">
