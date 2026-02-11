@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Valentine SPA</title>
+    <script>
+      if (
+        window.location.hostname.endsWith('github.io') &&
+        window.location.pathname === '/Antoinelecanard'
+      ) {
+        window.location.replace(
+          `${window.location.origin}/Antoinelecanard/${window.location.search}${window.location.hash}`
+        )
+      }
+    </script>
     <script type="module" crossorigin src="./assets/index-C1nJEeqc.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-D3EJinEZ.css">
   </head>
